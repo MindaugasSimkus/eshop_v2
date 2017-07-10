@@ -44,3 +44,5 @@ if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true) {
 } else {
 	include 'templates/public.php';
 }
+
+//namie padaryt grupes, kad galima butu pasirinkt puslapyje, extreme level susikurt ir lentele db kur butu visos grupes
