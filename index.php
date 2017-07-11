@@ -4,7 +4,9 @@ session_start();
 
 // Prijungiam failą saugantį duomenų bazės prisijungimo duomenis ir galbūt kitus parametrus
 include 'config.php';
-$msg =null;
+
+$GLOBALS['msg'] = '';
+
 // Prijungiam failą saugantį visas mūsų php funkcijas
 include 'functions.php';
 
@@ -26,7 +28,7 @@ if (isset($_POST['name']) && $_POST['name'] != null) {
 	add_product($conn);
 }
 
-if (isset($_GET['id']) && $_GET['id'] != null) {
+if(isset($_GET['id']) && $_GET['id'] != null) {
 	delete_product($conn, $_GET['id']);
 }
 
@@ -36,7 +38,6 @@ $products = get_products($conn);
 // atsijungiame
 mysqli_close($conn);
 
-
 // Iškviečiam template (šabloną), kuriame atvaizduosim rezultatus
 
 if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true) {
@@ -44,5 +45,3 @@ if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == true) {
 } else {
 	include 'templates/public.php';
 }
-
-//namie padaryt grupes, kad galima butu pasirinkt puslapyje, extreme level susikurt ir lentele db kur butu visos grupes

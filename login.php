@@ -7,12 +7,10 @@ if (isset($_POST['pass']) && $_POST['pass'] != null) {
 		header('Location: index.php');
 	} else {
 		echo "wrong password!";
+		header('Location: index.php');
 	}
 
 }
-
-
-
 
 
 include 'templates/login.php';

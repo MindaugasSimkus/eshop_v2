@@ -3,9 +3,9 @@
 // Sukuriam kintamuosius, saugančius mūsų duomenų bazės prisijungimo duomenis
 
 $db_host = "localhost";
-$db_user = "MindaugasSimkus";
-$db_pass = "agrastaspower";
-$db = "ignasg";
+$db_user = "root";
+$db_pass = "";
+$db = "eshop";
 
 
 // kadangi šie duomenys nesikeičia, galima deklaruoti ir kaip konstantas pvz:

@@ -3,3 +3,6 @@
 	padding: 20px;
 	color: white;
 }
+.card-deck .card {
+    width: initial;
+}

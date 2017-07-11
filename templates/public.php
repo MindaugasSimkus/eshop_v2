@@ -15,23 +15,29 @@
 					<p class="lead">This is CodeAcademy eshop.</p>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-sm-10"></div>
+				<div class="col-sm-2"><a href="logout.php" class="btn btn-danger">Log out</a>
+				</div>
+			</div>
 		</div>
 	</div>
 	<div class="container">
 		<div class="row">
-
 			<div class="col-md-2"></div>
 			<div class="col-md-8">
+				<?php if(!empty($GLOBALS['msg'])) echo $GLOBALS['msg']; ?>
 				<div class="card-deck">
-				<?php if(isset($msg)) { echo $msg; } ?>
-
 				    <?php
 				    	foreach ($products as $product) {
 			    		echo '<div class="card" >
-								  <img class="card-img-top" style="max-width: 300px; max-height: 180px;" src="product_images/'.$product['image'].'" alt="Card image cap">
+								  <img class="card-img-top" style="max-width: 100%" src="product_images/'.$product['image'].'" alt="Card image cap">
 								  <div class="card-block">
-								    <h4 class="card-title">'.$product['name'].' by '.$product['brand'].' with cost '.$product['price'].'</h4>
+								    <h4 class="card-title">'.$product['name'].' by '.$product['brand'].'</h4>
 								    <p class="card-text">'.$product['description'].'</p>
+								  </div>
+								  <div class="card-footer">
+									  <small class="text-muted"> Price: '.$product['price'].'</small>
 								  </div>
 								</div>';
 				    	}
@@ -39,7 +45,6 @@
 				</div>
 			</div>
 			<div class="col-md-2"></div>	
-	
 		</div>
 	</div>
 

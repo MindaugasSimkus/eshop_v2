@@ -3,9 +3,9 @@
 
 function alert($is_success = TRUE, $text = "") {
 	if($is_success) {
-		$msg = '<div class="alert alert-success" role="alert"><strong> Well done!</strong> '.$text.'</div>';
+		$GLOBALS['msg'] = '<div class="alert alert-success" role="alert"><strong> Well done!</strong> '.$text.'</div>';
 	} else {
-		$msg = '<div class="alert alert-danger" role="alert"><strong> Oh snap!</strong> '.$text.'</div>';
+		$GLOBALS['msg'] = '<div class="alert alert-danger" role="alert"><strong> Oh snap!</strong> '.$text.'</div>';
 	}
 }
 
@@ -25,13 +25,14 @@ function add_product($conn) {
     }
 
     // suformuojama užklausa naujai preke įrašyti
-    $sql = "INSERT INTO products (name, brand, description, price, weight, image) VALUES (
+    $sql = "INSERT INTO products (name, brand, description, price, weight, image, product_group) VALUES (
     '".$_POST['name']."', 
     '".$_POST['brand']."', 
     '".$_POST['description']."',
     '".$_POST['price']."',
     '".$_POST['weight']."',
-    '".$image_filename."'
+    '".$image_filename."',
+    '".$_POST['group']."'
     )"; 
 
     // ivykdome užklausą
@@ -68,6 +69,7 @@ function get_products($conn) {
 
     // gražinam rezultatus
     return $products;
+
 }
 
 function delete_product($conn, $id) {

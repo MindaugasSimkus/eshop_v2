@@ -13,8 +13,8 @@
 
 
 -- Dumping database structure for ignasg
-CREATE DATABASE IF NOT EXISTS `ignasg` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
-USE `ignasg`;
+CREATE DATABASE IF NOT EXISTS `eshop` /*!40100 DEFAULT CHARACTER SET utf8 COLLATE utf8_bin */;
+USE `eshop`;
 
 -- Dumping structure for table ignasg.products
 CREATE TABLE IF NOT EXISTS `products` (
