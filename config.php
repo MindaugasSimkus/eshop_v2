@@ -3,8 +3,8 @@
 // Sukuriam kintamuosius, saugančius mūsų duomenų bazės prisijungimo duomenis
 
 $db_host = "localhost";
-$db_user = "root";
-$db_pass = "";
+$db_user = "MindaugasSimkus";
+$db_pass = "agrastaspower";
 $db = "eshop";
 
 
