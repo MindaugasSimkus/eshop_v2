@@ -34,6 +34,8 @@ if(isset($_GET['id']) && $_GET['id'] != null) {
 
 // gauname visas prekes
 $products = get_products($conn);
+$product_group = get_product_group($conn);
+$groups = get_groups($conn);
 
 // atsijungiame
 mysqli_close($conn);

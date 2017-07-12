@@ -85,3 +85,61 @@ function delete_product($conn, $id) {
     }
 
 }
+
+function get_product_group($conn) { //gauname produktu grupiu pavadinimus is groups lenteles
+
+    // suformuojam užklausą visiems įrašams gauti
+    $sql = "SELECT groups.group_name FROM groups INNER JOIN products ON groups.id=products.product_group";
+
+    // įvykdom užklausą
+    $result = mysqli_query($conn, $sql);
+
+    // susikuriame prekių array, kuriame laikysime prekes
+    $product_group = [];
+
+    // jei mysql atsakyme eilučių yra daugiau nei viena...
+    if (mysqli_num_rows($result) > 0) {
+        // kol yra eilučių su duomenimis...
+        while($row = mysqli_fetch_assoc($result)) {
+            // tas eilutes surašome į masyvą.
+            array_push($product_group, $row);
+        }
+    } else {
+        alert(FALSE, "0 results found");
+    }
+
+    // gražinam rezultatus
+    return $product_group;
+
+}
+
+function get_groups($conn) { // gauname grupiu pavadinimus groups lenteleje
+
+    // suformuojam užklausą visiems įrašams gauti
+    $sql = "SELECT * FROM groups";
+
+    // įvykdom užklausą
+    $result = mysqli_query($conn, $sql);
+
+    // susikuriame prekių array, kuriame laikysime prekes
+    $groups = [];
+
+    // jei mysql atsakyme eilučių yra daugiau nei viena...
+    if (mysqli_num_rows($result) > 0) {
+        // kol yra eilučių su duomenimis...
+        while($row = mysqli_fetch_assoc($result)) {
+            // tas eilutes surašome į masyvą.
+            array_push($groups, $row);
+        }
+    } else {
+        alert(FALSE, "0 results found");
+    }
+
+    // gražinam rezultatus
+    return $groups;
+
+}
+
+
+
+ 

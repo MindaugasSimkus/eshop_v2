@@ -33,6 +33,7 @@
 			      <th>Description</th>
 			      <th>Price</th>
 			      <th>Weight</th>
+			      <th>Group</th>
 			      <th>Image</th>
 			      <th></th>
 			    </tr>
@@ -40,6 +41,9 @@
 			  <tbody>
 			    <tr>
 			    <?php
+			    	for ($i=0; $i < count($products) ; $i++) { 
+			    		$products[$i]['product_group'] = $product_group[$i]['group_name'];
+			    	}
 			    	foreach ($products as $product) {
 						echo '<th>'.$product['id'].'</th>
 						<td>'.$product['name'].'</td>
@@ -47,6 +51,7 @@
 						<td>'.$product['description'].'</td>
 						<td>'.$product['price'].'</td>
 						<td>'.$product['weight'].'</td>
+						<td>'.$product['product_group'].'</td>
 						<td><img height="42" width="42" src="product_images/'.$product['image'].'" class="figure-img img-fluid rounded" alt="Product image."></td>
 						<td><a href="?id='.$product['id'].'" class="btn btn-danger">Delete</a></td>
 						</tr>';
@@ -77,8 +82,8 @@
 								    <option value="1">Food</option>
 								    <option value="2">Transport</option>
 								    <option value="3">Household goods</option>
-								    <option value="4">Cleaning product</option>
-								    <option value="5">Service</option>
+								    <option value="4">Services</option>
+								    <option value="5">Other</option>
 								</select>
 							</div>
 						</div>
@@ -112,8 +117,5 @@
 			<div class="col-sm-12 text-center"><small><?= FOOTER;?></small></div>
 		</div>
 	</div>
-	<pre>
-	<?php print_r($products)?>
-	</pre>
 </body>
 </html>
